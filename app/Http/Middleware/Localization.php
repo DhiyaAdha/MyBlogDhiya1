@@ -16,6 +16,11 @@ class Localization
      */
     public function handle(Request $request, Closure $next)
     {
+        // hub-kernel-web
+        if(session()->has('locale')){
+            \App::setLocale(session()->get('locale'));
+        }
         return $next($request);
+
     }
 }

@@ -5,6 +5,7 @@ use Illuminate\Support\Facades\Route;
 
 // controller
 use App\Http\Controllers\DashboardController;
+use App\Http\Controllers\LocalizationController;
 
 /*
 |--------------------------------------------------------------------------
@@ -16,6 +17,8 @@ use App\Http\Controllers\DashboardController;
 | contains the "web" middleware group. Now create something great!
 |
 */
+
+Route::get('/localization/{language}',[LocalizationController::class, 'switch'])->name('localization.switch');
 
 Route::get('/', function () {
     return view('welcome');
