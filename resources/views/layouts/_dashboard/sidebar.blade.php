@@ -2,7 +2,8 @@
     <div class="sb-sidenav-menu">
         <div class="nav">
             {{-- Link:Dashboard --}}
-            <a class="nav-link active" href="#">
+            <a class="nav-link {{ set_active('dashboard.index') }} "
+            href="{{ route('dashboard.index') }}">
                 <div class="sb-nav-link-icon">
                     <i class="fas fa-tachometer-alt"></i>
                 </div>
@@ -22,7 +23,9 @@
                 {{-- Posts --}}
                 {{ trans('dashboard.link.posts') }}
             </a>
-            <a class="nav-link" href="#">
+            {{-- menu:categories --}}
+            <a class="nav-link {{ set_active('categories.index') }}" 
+            href="{{ route('categories.index') }}">
                 <div class="sb-nav-link-icon">
                     <i class="fas fa-bookmark"></i>
                 </div>
